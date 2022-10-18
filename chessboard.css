@@ -1,0 +1,41 @@
+:root {
+    --cell-width: 5vw;
+    --cell-height: 5vw;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.board {
+    display: flex;
+    flex-direction: column;
+}
+
+.board-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.cell {
+    width: var(--cell-width);
+    height: var(--cell-height);   
+    border: 1px solid black;  
+}
+
+.cell.cell-black {
+    background-color: black;
+}
+
+.cell.cell-white {
+    background-color: white;
+}
