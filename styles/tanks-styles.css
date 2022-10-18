@@ -96,7 +96,7 @@ body {
     :root {
         --thumbnails-img-width: 10vw;
         --thumbnails-img-height: 6.5vw;
-        --thumbnails-title-height: calc(var(--thumbnails-img-height) * 0.4);
+        --thumbnails-title-height: calc(var(--thumbnails-img-height) * 0.32);
     }
 
     .thumbnails-list {
@@ -127,6 +127,9 @@ body {
         margin-bottom: 0;
     }
 
+    .thumbnails-title {
+        font-size: 1.6vw;
+    }
 }
 
 @media (min-width: 900px) {
