@@ -63,9 +63,10 @@ body {
 .details-title {
     display: block;
     font-family: airstream;
-    font-style: italic;
+    font-style: normal;
     background-color: darkkhaki;
     position: absolute;
+    font-size: 2em;
     left: 1vw;
     bottom: 3vw;
 }
