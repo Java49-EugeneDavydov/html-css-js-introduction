@@ -43,6 +43,12 @@ body {
     flex-grow: 1;
 }
 
+.main-class.hidden {
+    --thumbnails-img-width: 35vw;
+    --thumbnails-img-height: 22vw;
+    --thumbnails-title-height: calc(var(--thumbnails-img-height) * 0.385);
+}
+
 .details-container {
     display: flex;
     flex-direction: column;
@@ -50,8 +56,18 @@ body {
     margin-bottom: 10vh;
 }
 
+.hidden .details-container {
+    display: none;
+}
+
 .details-frame {
     position: relative;
+}
+
+.hide-button {
+    position: absolute;
+    top: 3vh;
+    right: 3vw;
 }
 
 .details-image {
@@ -82,6 +98,15 @@ body {
     padding-left: 0;
 }
 
+.hidden .thumbnails-list {
+    max-height: 80vh;
+    margin-bottom: 5vh;
+}
+
+.hidden .thumbnails-title {
+    font-size: 3vh;
+}
+
 .thumbnails-item {
     max-width: var(--thumbnails-img-width);
     min-height: calc(var(--thumbnails-img-height) + var(--thumbnails-title-height));
@@ -106,6 +131,7 @@ body {
     text-align: center;
     height: var(--thumbnails-title-height);
     background-color: darkkhaki;
+    font-size: 1.75vh;
 }
 
 .thumbnails-item:hover {
@@ -120,18 +146,22 @@ body {
         --thumbnails-img-height: 6.5vw;
         --thumbnails-title-height: calc(var(--thumbnails-img-height) * 0.32);
     }
-
-    .thumbnails-list {
-        flex-direction: column;
-        flex-wrap: nowrap;
-        max-height: 80vh;
-        order: -1;
-        justify-content: flex-start;
-    }
-
+    
     .main-class {
         flex-direction: row;
         justify-content: space-around;
+    }
+
+    .hidden.main-class {
+        --thumbnails-img-width: 14vw;
+        --thumbnails-img-height: 9.1vw;
+        --thumbnails-title-height: calc(var(--thumbnails-img-height) * 0.32);
+    }
+        
+    .details-container {
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 0;
     }
 
     .details-image {
@@ -144,15 +174,37 @@ body {
         left: 1vw;
         bottom: 2vw;
     }
+
+    .hide-button {
+        position: absolute;
+        top: 8vh;
+        right: 3vw;
+    }
     
-    .details-container {
-        justify-content: center;
-        align-items: center;
+    .thumbnails-list {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        max-height: 80vh;
+        order: -1;
+        justify-content: flex-start;
+        padding-right: 3vw;
+    }
+
+    .hidden .thumbnails-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        max-height: 80vh;
         margin-bottom: 0;
+        margin-left: 2vw;
     }
 
     .thumbnails-title {
         font-size: 1.6vw;
+    }
+
+    .hidden .thumbnails-title {
+        font-size: 2.5vw;
     }
 }
 
@@ -166,8 +218,6 @@ body {
 
     .thumbnails-list {
         max-height: 83vh;
-        padding-right: 3vw;
-        margin-top: 5vh;
     }
 
     .details-image {
@@ -176,8 +226,14 @@ body {
     }
 
     .details-title {
-        font-size: 1.5em;
+        font-size: 2em;
         bottom: 2vw;
+    }
+
+    .hide-button {
+        position: absolute;
+        top: 7vh;
+        right: 3vw;
     }
 
     .thumbnails-title {
